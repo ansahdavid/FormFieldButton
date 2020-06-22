@@ -16,12 +16,12 @@ function App() {
         <Nav />
         <Switch>
           <Route path='/' exact component={home} />
-          <Route path='/difference-of-perspective' component={One} />
-          <Route path='/operations' component={Two} />
-          <Route path='/data-content-owner' component={Three} />
-          <Route path='/node' component={Four} />
-          <Route path='/concepts-and-qualifiers' component={Five} />
-          <Route path='/statistics' component={Six} />
+          <Route path='/one' component={One} />
+          <Route path='/two' component={Two} />
+          <Route path='/three' component={Three} />
+          <Route path='/four' component={Four} />
+          <Route path='/five' component={Five} />
+          <Route path='/six' component={Six} />
         </Switch>
       </div>
     </Router>
