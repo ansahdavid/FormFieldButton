@@ -1,13 +1,22 @@
 import React from 'react';
 import './../App.scss';
+import { Form } from './Form';
+import { Field } from './Field';
 
-function Four() {
+export const FourForm: React.FunctionComponent = () => {
   return (
-    <div>
-      <h1>Four Report Page</h1>
-      <button type="button" className='button'>Generate Four</button>
-    </div>
+    <Form
+      action="http://localhost:9000"
+      render={() => (
+        <React.Fragment>
+          <div className="alert alert-info" role="alert">
+            Four Report
+          </div>
+          <Field id="name" label="Name" />
+        </React.Fragment>
+      )}
+    />
   );
-}
+};
 
-export default Four;
+export default FourForm;

@@ -1,13 +1,22 @@
 import React from 'react';
 import './../App.scss';
+import { Form } from './Form';
+import { Field } from './Field';
 
-function Six() {
+export const SixForm: React.FunctionComponent = () => {
   return (
-    <div>
-      <h1>Six Report Page</h1>
-      <button type="button" className='button' >Generate Six</button>
-    </div>
+    <Form
+      action="http://localhost:9000"
+      render={() => (
+        <React.Fragment>
+          <div className="alert alert-info" role="alert">
+            Six Report
+          </div>
+          <Field id="name" label="Name" />
+        </React.Fragment>
+      )}
+    />
   );
-}
+};
 
-export default Six;
+export default SixForm;

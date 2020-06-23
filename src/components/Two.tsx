@@ -1,13 +1,22 @@
 import React from 'react';
 import './../App.scss';
+import { Form } from './Form';
+import { Field } from './Field';
 
-function Two() {
+export const TwoForm: React.FunctionComponent = () => {
   return (
-    <div>
-      <h1>Two Report Page</h1>
-      <button type="button" className='button'>Generate Two</button>
-    </div>
+    <Form
+      action="http://localhost:9000"
+      render={() => (
+        <React.Fragment>
+          <div className="alert alert-info" role="alert">
+            Two Report
+          </div>
+          <Field id="name" label="Name" />
+        </React.Fragment>
+      )}
+    />
   );
-}
+};
 
-export default Two;
+export default TwoForm;

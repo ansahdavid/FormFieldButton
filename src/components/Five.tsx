@@ -1,17 +1,22 @@
 import React from 'react';
 import './../App.scss';
+import { Form } from './Form';
+import { Field } from './Field';
 
-export interface Props {
-  name: string;
-  url: () => void;
-}
-
-function Five() {
+export const FiveForm: React.FunctionComponent = () => {
   return (
-    <div>
-      <h1>Five Report Page</h1>
-    </div>
+    <Form
+      action="http://localhost:9000"
+      render={() => (
+        <React.Fragment>
+          <div className="alert alert-info" role="alert">
+            Five Report
+          </div>
+          <Field id="name" label="Name" />
+        </React.Fragment>
+      )}
+    />
   );
-}
+};
 
-export default Five;
+export default FiveForm;

@@ -1,13 +1,22 @@
 import React from 'react';
 import './../App.scss';
+import { Form } from './Form';
+import { Field } from './Field';
 
-function Three() {
+export const ThreeForm: React.FunctionComponent = () => {
   return (
-    <div>
-      <h1>Three Report Page</h1>
-      <button type="button" className='button'>Generate Three</button>
-    </div>
+    <Form
+      action="http://localhost:9000"
+      render={() => (
+        <React.Fragment>
+          <div className="alert alert-info" role="alert">
+            Three Report
+          </div>
+          <Field id="name" label="Name" />
+        </React.Fragment>
+      )}
+    />
   );
-}
+};
 
-export default Three;
+export default ThreeForm;
