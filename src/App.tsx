@@ -7,11 +7,15 @@ import Three from './components/Three';
 import Four from './components/Four';
 import Five from './components/Five';
 import Six from './components/Six';
+import Top from './components/Top';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
     <Router>
+      <div className="top-banner">
+        <Top />
+      </div>
       <div className="App">
         <Nav />
         <Switch>

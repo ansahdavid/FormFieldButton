@@ -6,7 +6,7 @@ import { Field } from './Field';
 export const TwoForm: React.FunctionComponent = () => {
   return (
     <Form
-      action="http://localhost:9000"
+      url="http://localhost:9000"
       render={() => (
         <React.Fragment>
           <div className="alert alert-info" role="alert">

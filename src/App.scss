@@ -1,39 +1,49 @@
 .App {
-    text-align: center;
-  }
+  text-align: center;
+}
+
+.top-banner {
+  min-height: 2.5vh;
+  background: black;
+  color: white;
+}
+
+.info{
+  float:right;
+}
   
-  nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 10vh;
-    background: rgb(56, 56, 139);
-    color: white;
-  }
-  
-  .nav-links {
-    width: 80%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  
-  .link{
-    color: white;
-    text-decoration: none;
-  }
-  
-  .link:hover{
-    color: rgb(243, 218, 78);
-    text-decoration: underline;
-  }
-  
-  .button {
-    background-color: rgb(243, 218, 78) /* Gold */
-  }
-  
-  .button:hover {
-    background-color: rgb(56, 56, 139); /* Blue */
-    color: white;
-    cursor: pointer;
-  }
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: rgb(100, 178, 197);
+  color: white;
+}
+
+.nav-links {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.link{
+  color: white;
+  text-decoration: none;
+}
+
+.link:hover{
+  color: rgb(243, 218, 78);
+  text-decoration: underline;
+}
+
+.button {
+  background-color: rgb(243, 218, 78) /* Gold */
+}
+
+.button:hover {
+  background-color: rgb(56, 56, 139); /* Blue */
+  color: white;
+  cursor: pointer;
+}

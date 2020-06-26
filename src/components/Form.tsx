@@ -3,7 +3,7 @@ import './../App.scss';
 
 interface IFormProps {
     /* The http path that the form will be posted to */
-    action: string;
+    url: string;
 
     /* A prop which allows content to be injected */
     render: () => React.ReactNode;
@@ -88,47 +88,14 @@ export class Form extends React.Component<IFormProps, IFormState> {
      */
     private async submitForm(): Promise<boolean> {
         try {
-          const response = await fetch(this.props.action, {
+          const response = await fetch(this.props.url, {
             method: "post",
             headers: new Headers({
               "Content-Type": "application/json",
               Accept: "application/json"
             }),
-            body: JSON.stringify("test") // this.state.values
-          });
-        //   if (response.status === 400) {
-        //     // Map the validation errors to IErrors
-        //     let responseBody: any;
-        //     responseBody = await response.json();
-        //     const errors: IErrors = {};
-        //     let haveError: boolean = false;
-
-        //     // eslint-disable-next-line array-callback-return
-        //     Object.keys(responseBody).map((key: string) => {
-        //       // For ASP.NET core, the field names are in title case - so convert to camel case
-        //       // const fieldName = key.charAt(0).toLowerCase() + key.substring(1);
-        //       errors[fieldName] = responseBody[key];
-        //     });
-
-        //     this.setState({ errors });
-        //   }
-
-        //   if (response.status === 404) {
-        //     // Map the validation errors to IErrors
-        //     let responseBody: any;
-        //     responseBody = await response.json();
-        //     const errors: IErrors = {};
-        //     let haveError: boolean = false;
-
-        //     // eslint-disable-next-line array-callback-return
-        //     Object.keys(errors).map((key: string) => {
-        //         if (errors[key].length > 0) {
-        //             haveError = true;
-        //         }
-        //     });
-
-        //     this.setState({ errors });
-        //   }
+            body: JSON.stringify(this.state.values)
+          })
           return response.ok;
         } catch (ex) {
           return false;
@@ -142,7 +109,11 @@ export class Form extends React.Component<IFormProps, IFormState> {
             <div className="container">
                 {this.props.render()}
                 <div className="form-group">
-                    <button type="submit" className="btn btn-primary" disabled={this.haveErrors(errors)}>Generate Report</button>
+                    <button type="submit" 
+                            className="btn btn-primary" 
+                            disabled={this.haveErrors(errors)}>
+                            Generate Report
+                    </button>
                 </div>
                 {/* Success */}
                 {submitSuccess && (
@@ -161,7 +132,7 @@ export class Form extends React.Component<IFormProps, IFormState> {
                 {submitSuccess === false &&
                     this.haveErrors(errors) && (
                     <div className="alert alert-danger" role="alert">
-                        Form Invalid. Please review, adjust and try again!
+                        Form Invalid. Please review and try again!
                     </div>
                 )}
             </div>

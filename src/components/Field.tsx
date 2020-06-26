@@ -4,20 +4,23 @@ import * as React from "react";
 type Editor = "textbox" | "multilinetextbox" | "dropdown";
 
 export interface IFieldProps {
-    /* The unique field name */
+    // Unique field name
     id: string;
   
-    /* The label text for the field */
+    // Label text for field
     label?: string;
   
-    /* The editor for the field */
+    // The editor for the field
     editor?: Editor;
   
-    /* The drop down items for the field */
+    // The drop down items for the field
     options?: string[];
   
-    /* The field value */
+    // The field value
     value?: any;
+
+    // The function to provide link to new page
+    // linkfunction?: () => void;
 }
 
 export const Field: React.FunctionComponent<IFieldProps> = ({
@@ -25,7 +28,8 @@ export const Field: React.FunctionComponent<IFieldProps> = ({
     label,
     editor,
     options,
-    value
+    value,
+    // url
   }) => {
     return (
       <div className="form-group">
@@ -38,11 +42,11 @@ export const Field: React.FunctionComponent<IFieldProps> = ({
             value={value}
             onChange={
               (e: React.FormEvent<HTMLInputElement>) =>
-                console.log(e) /* TODO: push change to form values */
+                console.log(e) // TODO: push change to form values
             }
             onBlur={
               (e: React.FormEvent<HTMLInputElement>) =>
-                console.log(e) /* TODO: validate field value */
+                console.log(e) // TODO: validate field value
             }
             className="form-control"
           />
@@ -54,11 +58,11 @@ export const Field: React.FunctionComponent<IFieldProps> = ({
             value={value}
             onChange={
               (e: React.FormEvent<HTMLTextAreaElement>) =>
-                console.log(e) /* TODO: push change to form values */
+                console.log(e) // TODO: push change to form values
             }
             onBlur={
               (e: React.FormEvent<HTMLTextAreaElement>) =>
-                console.log(e) /* TODO: validate field value */
+                console.log(e) // TODO: validate field value
             }
             className="form-control"
           />
@@ -69,13 +73,18 @@ export const Field: React.FunctionComponent<IFieldProps> = ({
             id={id}
             name={id}
             value={value}
+
+            // onClick={
+            //   (e: React.FormEvent<HTMLSelectElement>) =>
+            //     url
+            // }
             onChange={
               (e: React.FormEvent<HTMLSelectElement>) =>
-                console.log(e) /* TODO: push change to form values */
+                console.log(e) // TODO: push change to form values
             }
             onBlur={
               (e: React.FormEvent<HTMLSelectElement>) =>
-                console.log(e) /* TODO: validate field value */
+                console.log(e) // TODO: validate field value
             }
             className="form-control"
           >

@@ -1,12 +1,20 @@
 .App {
   text-align: center; }
 
+.top-banner {
+  min-height: 2.5vh;
+  background: black;
+  color: white; }
+
+.info {
+  float: right; }
+
 nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background: #38388b;
+  background: #64b2c5;
   color: white; }
 
 .nav-links {
